@@ -24,7 +24,7 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 - **Gráficos para visualização**:
   - Scatter plots entre variáveis explicativas e a variável dependente.
   - Mapas de calor para exibir correlações e identificar potenciais interações.
-
+ 
 ---
 
 ### **2. Modelagem**
