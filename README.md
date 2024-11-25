@@ -65,9 +65,9 @@ Adicionalmente, a função `selecao_observacao` permite explorar os dados observ
   
 # Análise de Interações entre Variáveis Explicativas
 
-Explorou-se como os efeitos combinados das variáveis `youtube` e `facebook` podem influenciar as vendas de forma sinérgica ou antagônica. Para isso, adotaram-se as seguintes abordagens:
+Explorou-se como os efeitos combinados das variáveis `youtube` e `facebook` podem influenciar as vendas de forma sinérgica ou antagônica. Para isso, foram adotadas as seguintes abordagens:
 
-- **Criação de Termos de Interação**: Incluíram-se no modelo termos como `youtube * facebook` para capturar possíveis efeitos conjuntos significativos.
+- **Criação de Termos de Interação**: No modelo foram incluídos termos como `youtube * facebook` para capturar possíveis efeitos conjuntos significativos.
 
 - **Utilização de Gráficos de Perfis Médios**: Esses gráficos permitiram visualizar padrões de interação entre as variáveis, facilitando a identificação de como a combinação dos investimentos em `youtube` e `facebook` afeta as vendas.
 
@@ -88,29 +88,29 @@ Essas análises proporcionam uma compreensão mais profunda de como as estratég
 
 ### **2. Modelagem**
 - Construção inicial de um modelo de regressão linear utilizando variáveis explicativas para capturar relações diretas entre os investimentos em marketing (`youtube`, `facebook`, `newspaper`) e o retorno em vendas.
-  - Utilizou-se o método de **Mínimos Quadrados Ordinários (OLS)** para obter uma linha base, identificando o impacto direto de cada variável nas vendas e avaliando a significância estatística dos coeficientes.
+  - Realizado o método de **Mínimos Quadrados Ordinários (OLS)** para obter uma linha base, identificando o impacto direto de cada variável nas vendas e avaliando a significância estatística dos coeficientes.
 - Expansão do modelo com **variáveis polinomiais**, permitindo capturar relações não lineares e interações entre os fatores explicativos. Esse enriquecimento do espaço de variáveis trouxe flexibilidade ao modelo para ajustar padrões complexos nos dados.
 - **Ajuste de hiperparâmetros**:
-  - Aplicou-se validação cruzada (k-fold) para selecionar os melhores valores do parâmetro de regularização (**alpha**) no contexto de **Ridge Regression**, garantindo que o modelo fosse robusto e menos suscetível a overfitting.
+  - Para a validação cruzada foi aplicado o método (k-fold) para selecionar os melhores valores do parâmetro de regularização (**alpha**) no contexto de **Ridge Regression**, garantindo que o modelo fosse robusto e menos suscetível a overfitting.
   - A validação cruzada avaliou múltiplas combinações de parâmetros, minimizando o erro médio quadrático em subconjuntos dos dados.
 - Aplicação de **Ridge Regression**:
-  - Incorporou-se regularização L2 para reduzir o impacto da multicolinearidade, comum em dados de marketing, estabilizando os coeficientes do modelo.
+  - A técnica de regularização utilizada foi a L2 - Rigde - para reduzir o impacto da multicolinearidade, comum em dados de marketing, estabilizando os coeficientes do modelo.
   - O termo de penalidade controlou coeficientes extremos, resultando em maior generalização nas previsões.
 - **Tratamento de heterocedasticidade**:
-  - Utilizaram-se testes estatísticos, como **Breusch-Pagan**, para detectar variâncias inconsistentes nos resíduos.
+  - Os testes estatísticos para verificação de heterocedasticidade, como **Breusch-Pagan**, para detectar variâncias inconsistentes nos resíduos foram aplicados aos dados.
   - Implementaram-se transformações logarítmicas para estabilizar a variância nas variáveis explicativas e dependente, tornando os erros mais consistentes.
-  - Quando necessário, ajustamos modelos ponderados (**Weighted Least Squares - WLS**) para lidar com a heterocedasticidade residual, atribuindo pesos inversamente proporcionais à variância observada.
+  - Quando necessário, foram feitos ajustes nos modelos ponderados (**Weighted Least Squares - WLS**) para lidar com a heterocedasticidade residual, atribuindo pesos inversamente proporcionais à variância observada.
 - **Avaliação do modelo**:
   - O desempenho foi medido utilizando métricas como:
     - **R² ajustado**: Para avaliar a proporção da variância explicada pelo modelo.
     - **RMSE (Root Mean Square Error)**: Para medir a precisão das previsões.
     - **MAPE (Mean Absolute Percentage Error)**: Para medir o erro percentual médio das previsões em relação aos valores reais.
-  - Realizamos análise dos resíduos para garantir a adequação do modelo e detectar padrões não capturados.
+  - Foi realizado a análise dos resíduos para garantir a adequação do modelo e detectar padrões não capturados.
 
 ---
 
 ### **3. Curvas de Aprendizagem**
-- Análise de desempenho do modelo à medida que o volume de dados aumenta.
+- Análise de desempenho do modelo a medida que o volume de dados aumenta.
 - Identificação de possíveis melhorias na qualidade das previsões.
 
 
