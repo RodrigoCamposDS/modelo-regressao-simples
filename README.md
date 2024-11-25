@@ -1,13 +1,13 @@
 # 📊 Modelo Simples: Otimização de Variáveis com Base Estatística
 
-Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Inclui limpeza de dados, avaliação de métricas e análise exploratória, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
+Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Inclui limpeza de dados, avaliação de métricas e análise exploratória, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **_Ridge Regression_** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
 
 ---
 
 ## 📌 Objetivos do Projeto
-1. Entender a relação entre os investimentos em diferentes plataformas de marketing (YouTube, Facebook e Newspaper) e o número de vendas geradas.
+1. Entender a relação entre os investimentos em diferentes plataformas de _marketing_ (YouTube, Facebook e Newspaper) e o número de vendas geradas.
 2. Identificar quais variáveis têm maior impacto no resultado.
-3. Construir um modelo de regressão linear, incluindo técnicas de regularização para prever vendas com base nos investimentos em marketing.
+3. Construir um modelo de regressão linear, incluindo técnicas de regularização para prever vendas com base nos investimentos em _marketing_.
 4. Demonstrar a aplicação de fundamentos estatísticos e teóricos para embasar decisões analíticas.
 
 ---
@@ -35,7 +35,7 @@ As estatísticas incluem:
 #### 📉 **Descrição do Gráfico de Dispersão**
 A função `grafico_dispersao` utiliza o método `stats.linregress()` da biblioteca **SciPy** para avaliar a relação linear entre duas variáveis. Ela calcula:
 
-1. **Coeficiente Angular (Slope):** Inclinação da linha de regressão.
+1. **Coeficiente Angular (_Slope_):** Inclinação da linha de regressão.
 2. **Intercepto:** Valor da variável dependente quando a independente é zero.
 3. **Coeficiente de Correlação (R):** Mede a força e direção da relação linear.
 4. **Valor-p:** Testa a significância estatística da relação.
@@ -81,30 +81,30 @@ Explorou-se como os efeitos combinados das variáveis `youtube` e `facebook` pod
 
   ![Gráfico de Perfis Médios](./imagens/grafico_perfil_medio.png)
 
-Essas análises proporcionam uma compreensão mais profunda de como as estratégias de marketing digital podem ser otimizadas ao considerar os efeitos combinados das diferentes plataformas.
+Essas análises proporcionam uma compreensão mais profunda de como as estratégias de _marketing_ digital podem ser otimizadas ao considerar os efeitos combinados das diferentes plataformas.
 
 
 ---
 
 ### **2. Modelagem**
-- Construção inicial de um modelo de regressão linear utilizando variáveis explicativas para capturar relações diretas entre os investimentos em marketing (`youtube`, `facebook`, `newspaper`) e o retorno em vendas.
+- Construção inicial de um modelo de regressão linear utilizando variáveis explicativas para capturar relações diretas entre os investimentos em _marketing_ (`youtube`, `facebook`, `newspaper`) e o retorno em vendas.
   - Realizado o método de **Mínimos Quadrados Ordinários (OLS)** para obter uma linha base, identificando o impacto direto de cada variável nas vendas e avaliando a significância estatística dos coeficientes.
 - Expansão do modelo com **variáveis polinomiais**, permitindo capturar relações não lineares e interações entre os fatores explicativos. Esse enriquecimento do espaço de variáveis trouxe flexibilidade ao modelo para ajustar padrões complexos nos dados.
 - **Ajuste de hiperparâmetros**:
-  - Para a validação cruzada foi aplicado o método (k-fold) para selecionar os melhores valores do parâmetro de regularização (**alpha**) no contexto de **Ridge Regression**, garantindo que o modelo fosse robusto e menos suscetível a overfitting.
+  - Para a validação cruzada foi aplicado o método (_k-fold_) para selecionar os melhores valores do parâmetro de regularização (**alpha**) no contexto de **_Ridge Regression_**, garantindo que o modelo fosse robusto e menos suscetível a _overfitting_.
   - A validação cruzada avaliou múltiplas combinações de parâmetros, minimizando o erro médio quadrático em subconjuntos dos dados.
-- Aplicação de **Ridge Regression**:
-  - A técnica de regularização utilizada foi a L2 - Rigde - para reduzir o impacto da multicolinearidade, comum em dados de marketing, estabilizando os coeficientes do modelo.
+- Aplicação de **_Ridge Regression_**:
+  - A técnica de regularização utilizada foi a L2 - _Rigde_ - para reduzir o impacto da multicolinearidade, comum em dados de _marketing_, estabilizando os coeficientes do modelo.
   - O termo de penalidade controlou coeficientes extremos, resultando em maior generalização nas previsões.
 - **Tratamento de heterocedasticidade**:
   - Os testes estatísticos para verificação de heterocedasticidade, como **Breusch-Pagan**, para detectar variâncias inconsistentes nos resíduos foram aplicados aos dados.
   - Implementaram-se transformações logarítmicas para estabilizar a variância nas variáveis explicativas e dependente, tornando os erros mais consistentes.
-  - Quando necessário, foram feitos ajustes nos modelos ponderados (**Weighted Least Squares - WLS**) para lidar com a heterocedasticidade residual, atribuindo pesos inversamente proporcionais à variância observada.
+  - Quando necessário, foram feitos ajustes nos modelos ponderados (**_Weighted Least Squares - WLS_**) para lidar com a heterocedasticidade residual, atribuindo pesos inversamente proporcionais à variância observada.
 - **Avaliação do modelo**:
   - O desempenho foi medido utilizando métricas como:
-    - **R² ajustado**: Para avaliar a proporção da variância explicada pelo modelo.
-    - **RMSE (Root Mean Square Error)**: Para medir a precisão das previsões.
-    - **MAPE (Mean Absolute Percentage Error)**: Para medir o erro percentual médio das previsões em relação aos valores reais.
+    - **_R²_ ajustado**: Para avaliar a proporção da variância explicada pelo modelo.
+    - **_RMSE_ (_Root Mean Square Error_)**: Para medir a precisão das previsões.
+    - **_MAPE_ (_Mean Absolute Percentage Error_)**: Para medir o erro percentual médio das previsões em relação aos valores reais.
   - Foi realizado a análise dos resíduos para garantir a adequação do modelo e detectar padrões não capturados.
 
 ---
@@ -114,13 +114,13 @@ Essas análises proporcionam uma compreensão mais profunda de como as estratég
 - Identificação de possíveis melhorias na qualidade das previsões.
 
 
-#### **Curva de Aprendizagem - Técnica Ridge**
+#### **Curva de Aprendizagem - Técnica _Ridge_**
 ![Curva de Aprendizado do modelo](./imagens/Curva_aprendizado.png)
 ---
 
 ### 📊 Interpretação dos Coeficientes do Modelo
 
-Os coeficientes do modelo representam o impacto proporcional de cada variável no número de vendas, assumindo que todas as outras variáveis permanecem constantes. Os resultados do modelo Ridge indicam:
+Os coeficientes do modelo representam o impacto proporcional de cada variável no número de vendas, assumindo que todas as outras variáveis permanecem constantes. Os resultados do modelo _Ridge_ indicam:
 
 1. **Facebook**: O impacto direto de investir no Facebook é capturado pela variável `facebook`. Os termos quadráticos e cúbicos (`facebook_quadratico` e `facebook_cubico`) mostram como aumentos mais significativos no investimento podem ter efeitos não lineares.
 
@@ -154,41 +154,41 @@ Os coeficientes foram salvos em um arquivo `coeficientes_ridge.csv` para referê
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-- **Linguagem**: Python
+- **Linguagem**: _Python_
 - **Bibliotecas**:
   - `pandas` e `numpy`: Manipulação e análise de dados.
   - `matplotlib` e `seaborn`: Visualizações gráficas.
-  - `statsmodels` e `sklearn`: Construção e avaliação do modelo, incluindo regularização com Ridge.
+  - `statsmodels` e `sklearn`: Construção e avaliação do modelo, incluindo regularização com _Ridge_.
 
 ---
 
 ## 📈 Resultados
 ### Desempenho do Modelo Ridge (α=0.01)
 
-- **R² (Treino)**: 99.71%
-- **R² (Teste)**: 99.54%
-- **MSE (Treino)**: 0.0025
-- **MSE (Teste)**: 0.0047
+- **_R²_ (Treino)**: 99.71%
+- **_R²_ (Teste)**: 99.54%
+- **_MSE_ (Treino)**: 0.0025
+- **_MSE_ (Teste)**: 0.0047
 - **Validação Cruzada**:
-  - R² Médio (K-Fold): **99.60% (±0.0014)**
-  - MSE Médio (K-Fold): **0.0033 (±0.0011)**
+  - _R²_ Médio (_K-Fold_): **99.60% (±0.0014)**
+  - _MSE_ Médio (_K-Fold_): **0.0033 (±0.0011)**
 
 ### Métricas Adicionais
-- **Log-Likelihood**:
+- **_Log-Likelihood_**:
   - Treino: **198.63**
   - Teste: **40.30**
-- **AIC** (Akaike Information Criterion):
+- **_AIC_** (_Akaike Information Criterion_):
   - Treino: **-381.27**
   - Teste: **-64.60**
-- **BIC** (Bayesian Information Criterion):
+- **_BIC_** (_Bayesian Information Criterion_):
   - Treino: **-358.58**
   - Teste: **-52.87**
 
 ### Análise
-- O modelo apresentou excelente capacidade de explicação dos dados, com valores de **R² elevados tanto no conjunto de treino quanto no conjunto de teste**.
-- A diferença mínima de **0.17% no R²** entre treino e teste demonstra que o modelo está bem ajustado, sem sinais de overfitting ou underfitting.
+- O modelo apresentou excelente capacidade de explicação dos dados, com valores de **_R²_ elevados tanto no conjunto de treino quanto no conjunto de teste**.
+- A diferença mínima de **0.17% no _R²_** entre treino e teste demonstra que o modelo está bem ajustado, sem sinais de _overfitting_ ou _underfitting_.
 - As métricas de validação cruzada confirmam a **robustez e consistência do modelo** em diferentes subconjuntos de dados.
-- Métricas como AIC e BIC reforçam a eficiência do modelo ao penalizar a complexidade sem sacrificar o desempenho.
+- Métricas como _AIC_ e _BIC_ reforçam a eficiência do modelo ao penalizar a complexidade sem sacrificar o desempenho.
 
 
 ---
