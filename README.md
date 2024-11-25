@@ -1,6 +1,6 @@
 # 📊 Modelo Simples: Otimização de Variáveis com Base Estatística
 
-Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Ele inclui análise exploratória, limpeza de dados e avaliação de métricas, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
+Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Ele inclui limpeza de dados, avaliação de métricas e análise exploratória, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
 
 ---
 
@@ -17,18 +17,59 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 ### **1. Análise Exploratória dos Dados**
 - Estatísticas descritivas para entender as distribuições individuais de cada variável, como média, mediana e dispersão.
 - Verificação de correlações lineares entre as variáveis explicativas (`youtube`, `facebook`, `newspaper`) e a variável dependente (`sales`) para identificar relações diretas e independentes.
-- **Análise de interações entre variáveis explicativas**:
-  - Exploramos como os efeitos combinados de variáveis, como `youtube` e `facebook`, poderiam ter impacto sinérgico ou antagônico nas vendas.
-  - Utilizamos scatterplots e mapas de calor para identificar padrões de interação.
-  - Criamos termos de interação, como `youtube * facebook`, para incluir combinações potencialmente significativas na modelagem.
-- **Gráficos para visualização**:
-  - Scatter plots e mapas de calor entre variáveis explicativas e a variável dependente:
-#### **Gráfico de Dispersão (com resíduos)**
- ![Gráfico de Dispersão](./grafico_scat.png)
+#### **Foram criadas funções e uma delas permitem avaliar as medidas resumo juntamente com gráficos para uma melhor assimilação e observação:**
 
-  #### **Mapas de calor para exibir correlações e identificar potenciais interações.**
+### 📊 Medidas Resumo com Visualização Gráfica
+As funções criadas ajudam a resumir e visualizar estatísticas descritivas, permitindo análises intuitivas e detalhadas.
+
+#### 🔍 Estatísticas Resumidas
+![Medidas Resumo e Visualização Gráfica](./Medidas_resumo_grafico.png)
+
+As estatísticas incluem:
+- **Tendência Central:** Média, Mediana, Moda, Quantis.
+- **Dispersão:** Desvio Padrão, Amplitude, Variância, IQR.
+- **Testes de Normalidade:** Shapiro-Wilk e Kolmogorov-Smirnov.
+
+---
+
+#### 📉 **Descrição do Gráfico de Dispersão**
+A função `grafico_dispersao` utiliza o método `stats.linregress()` da biblioteca **SciPy** para avaliar a relação linear entre duas variáveis. Ela calcula:
+
+1. **Coeficiente Angular (Slope):** Inclinação da linha de regressão.
+2. **Intercepto:** Valor da variável dependente quando a independente é zero.
+3. **Coeficiente de Correlação (R):** Mede a força e direção da relação linear.
+4. **Valor-p:** Testa a significância estatística da relação.
+5. **Erro Padrão da Inclinação:** Quantifica a incerteza da estimativa.
+
+#### ⚙️ **Adaptações no Gráfico**
+- Resíduos representados por **linhas pretas verticais**, para avaliar **homocedasticidade**.
+- **Numeração** das observações originais, destacando outliers ou valores atípicos.
+
+#### 📊 **Exemplo Visual**
+Os resíduos ajudam a verificar a constância da variância dos erros (homocedasticidade). 
+Adicionalmente, a função `selecao_observacao` permite explorar os dados observados.
+
+---
+
+#### **Função Seleção e Gráfico**
+- **Seleção de Coordenadas Observadas**
+  ![Seleção de Observações](./Funcao_observacao.png)
+
+- **Gráfico com Resíduos e Coordenadas**
+  ![Gráfico de Dispersão](./Grafico_coordenadas.png)
+
+- **Mapas de calor para exibir correlações e identificar potenciais interações.**
  ![Mapa de Calor](./Mapa_calor.png)
  
+ 
+  
+- **Análise de interações entre variáveis explicativas**:
+  - Foi explorado como os efeitos combinados de variáveis, como `youtube` e `facebook`, poderiam ter impacto sinérgico ou antagônico nas vendas.
+  - Foram utilizados Gráficos De Perfis Médios para identificar padrões de interação.
+  - Criamos termos de interação, como `youtube * facebook`, para incluir combinações potencialmente significativas na modelagem.
+- **Sumário e gráficos para visualização**:
+  - Gráfico de Perfis Médios:
+
 ---
 
 ### **2. Modelagem**
