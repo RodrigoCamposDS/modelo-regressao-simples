@@ -1,6 +1,6 @@
 # 📊 Modelo Simples: Otimização de Variáveis com Base Estatística
 
-Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Ele inclui limpeza de dados, avaliação de métricas e análise exploratória, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
+Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Inclui limpeza de dados, avaliação de métricas e análise exploratória, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
 
 ---
 
@@ -23,7 +23,7 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 As funções criadas ajudam a resumir e visualizar estatísticas descritivas, permitindo análises intuitivas e detalhadas.
 
 #### 🔍 Estatísticas Resumidas
-![Medidas Resumo e Visualização Gráfica](./Medidas_resumo_grafico.png)
+![Medidas Resumo e Visualização Gráfica](./imagens/Medidas_resumo_grafico.png)
 
 As estatísticas incluem:
 - **Tendência Central:** Média, Mediana, Moda, Quantis.
@@ -53,38 +53,52 @@ Adicionalmente, a função `selecao_observacao` permite explorar os dados observ
 
 #### **Função Seleção e Gráfico**
 - **Seleção de Coordenadas Observadas**
-  ![Seleção de Observações](./Funcao_observacao.png)
+  ![Seleção de Observações](./imagens/Funcao_observacao.png)
 
 - **Gráfico com Resíduos e Coordenadas**
-  ![Gráfico de Dispersão](./Grafico_coordenadas.png)
+  ![Gráfico de Dispersão](./imagens/Grafico_coordenadas.png)
 
 - **Mapas de calor para exibir correlações e identificar potenciais interações.**
- ![Mapa de Calor](./Mapa_calor.png)
+ ![Mapa de Calor](./imagens/Mapa_calor.png)
  
  
   
-- **Análise de interações entre variáveis explicativas**:
-  - Foi explorado como os efeitos combinados de variáveis, como `youtube` e `facebook`, poderiam ter impacto sinérgico ou antagônico nas vendas.
-  - Foram utilizados Gráficos De Perfis Médios para identificar padrões de interação.
-  - Criamos termos de interação, como `youtube * facebook`, para incluir combinações potencialmente significativas na modelagem.
-- **Sumário e gráficos para visualização**:
-  - Gráfico de Perfis Médios:
+# Análise de Interações entre Variáveis Explicativas
+
+Explorou-se como os efeitos combinados das variáveis `youtube` e `facebook` podem influenciar as vendas de forma sinérgica ou antagônica. Para isso, adotaram-se as seguintes abordagens:
+
+- **Criação de Termos de Interação**: Incluíram-se no modelo termos como `youtube * facebook` para capturar possíveis efeitos conjuntos significativos.
+
+- **Utilização de Gráficos de Perfis Médios**: Esses gráficos permitiram visualizar padrões de interação entre as variáveis, facilitando a identificação de como a combinação dos investimentos em `youtube` e `facebook` afeta as vendas.
+
+## Sumário e Gráficos para Visualização
+
+- **Sumário OLS**: A análise de regressão linear (OLS) foi realizada para avaliar a significância das interações entre as variáveis explicativas. Os resultados indicam que o termo de interação `youtube * facebook` é estatisticamente significativo, sugerindo que o efeito combinado dessas plataformas é relevante para as vendas.
+
+  ![Sumário OLS](./imagens/sumario_interacao.png)
+
+- **Gráfico de Perfis Médios**: Este gráfico ilustra como diferentes níveis de investimento em `youtube` e `facebook` influenciam as vendas, destacando a natureza da interação entre essas variáveis.
+
+  ![Gráfico de Perfis Médios](./imagens/grafico_perfil_medio.png)
+
+Essas análises proporcionam uma compreensão mais profunda de como as estratégias de marketing digital podem ser otimizadas ao considerar os efeitos combinados das diferentes plataformas.
+
 
 ---
 
 ### **2. Modelagem**
 - Construção inicial de um modelo de regressão linear utilizando variáveis explicativas para capturar relações diretas entre os investimentos em marketing (`youtube`, `facebook`, `newspaper`) e o retorno em vendas.
-  - Utilizamos o método de **Mínimos Quadrados Ordinários (OLS)** para obter uma linha base, identificando o impacto direto de cada variável nas vendas e avaliando a significância estatística dos coeficientes.
+  - Utilizou-se o método de **Mínimos Quadrados Ordinários (OLS)** para obter uma linha base, identificando o impacto direto de cada variável nas vendas e avaliando a significância estatística dos coeficientes.
 - Expansão do modelo com **variáveis polinomiais**, permitindo capturar relações não lineares e interações entre os fatores explicativos. Esse enriquecimento do espaço de variáveis trouxe flexibilidade ao modelo para ajustar padrões complexos nos dados.
 - **Ajuste de hiperparâmetros**:
-  - Aplicamos validação cruzada (k-fold) para selecionar os melhores valores do parâmetro de regularização (**alpha**) no contexto de **Ridge Regression**, garantindo que o modelo fosse robusto e menos suscetível a overfitting.
+  - Aplicou-se validação cruzada (k-fold) para selecionar os melhores valores do parâmetro de regularização (**alpha**) no contexto de **Ridge Regression**, garantindo que o modelo fosse robusto e menos suscetível a overfitting.
   - A validação cruzada avaliou múltiplas combinações de parâmetros, minimizando o erro médio quadrático em subconjuntos dos dados.
 - Aplicação de **Ridge Regression**:
-  - Incorporamos regularização L2 para reduzir o impacto da multicolinearidade, comum em dados de marketing, estabilizando os coeficientes do modelo.
+  - Incorporou-se regularização L2 para reduzir o impacto da multicolinearidade, comum em dados de marketing, estabilizando os coeficientes do modelo.
   - O termo de penalidade controlou coeficientes extremos, resultando em maior generalização nas previsões.
 - **Tratamento de heterocedasticidade**:
-  - Utilizamos testes estatísticos, como **Breusch-Pagan**, para detectar variâncias inconsistentes nos resíduos.
-  - Implementamos transformações logarítmicas para estabilizar a variância nas variáveis explicativas e dependente, tornando os erros mais consistentes.
+  - Utilizaram-se testes estatísticos, como **Breusch-Pagan**, para detectar variâncias inconsistentes nos resíduos.
+  - Implementaram-se transformações logarítmicas para estabilizar a variância nas variáveis explicativas e dependente, tornando os erros mais consistentes.
   - Quando necessário, ajustamos modelos ponderados (**Weighted Least Squares - WLS**) para lidar com a heterocedasticidade residual, atribuindo pesos inversamente proporcionais à variância observada.
 - **Avaliação do modelo**:
   - O desempenho foi medido utilizando métricas como:
@@ -101,7 +115,7 @@ Adicionalmente, a função `selecao_observacao` permite explorar os dados observ
 
 
 #### **Curva de Aprendizagem - Técnica Ridge**
-![Curva de Aprendizado do modelo](./Curva_aprendizado.png)
+![Curva de Aprendizado do modelo](./imagens/Curva_aprendizado.png)
 ---
 
 ### 📊 Interpretação dos Coeficientes do Modelo
