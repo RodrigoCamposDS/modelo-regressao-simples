@@ -23,7 +23,7 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 As funções criadas ajudam a resumir e visualizar estatísticas descritivas, permitindo análises intuitivas e detalhadas.
 
 #### 🔍 Estatísticas Resumidas
-![Medidas Resumo e Visualização Gráfica](./Medidas_resumo_grafico.png)
+![Medidas Resumo e Visualização Gráfica](./imagens/Medidas_resumo_grafico.png)
 
 As estatísticas incluem:
 - **Tendência Central:** Média, Mediana, Moda, Quantis.
@@ -53,13 +53,13 @@ Adicionalmente, a função `selecao_observacao` permite explorar os dados observ
 
 #### **Função Seleção e Gráfico**
 - **Seleção de Coordenadas Observadas**
-  ![Seleção de Observações](./Funcao_observacao.png)
+  ![Seleção de Observações](./imagens/Funcao_observacao.png)
 
 - **Gráfico com Resíduos e Coordenadas**
-  ![Gráfico de Dispersão](./Grafico_coordenadas.png)
+  ![Gráfico de Dispersão](./imagens/Grafico_coordenadas.png)
 
 - **Mapas de calor para exibir correlações e identificar potenciais interações.**
- ![Mapa de Calor](./Mapa_calor.png)
+ ![Mapa de Calor](./imagens/Mapa_calor.png)
  
  
   
@@ -75,11 +75,11 @@ Explorou-se como os efeitos combinados das variáveis `youtube` e `facebook` pod
 
 - **Sumário OLS**: A análise de regressão linear (OLS) foi realizada para avaliar a significância das interações entre as variáveis explicativas. Os resultados indicam que o termo de interação `youtube * facebook` é estatisticamente significativo, sugerindo que o efeito combinado dessas plataformas é relevante para as vendas.
 
-  ![Sumário OLS](./sumario_interacao.png)
+  ![Sumário OLS](./imagens/sumario_interacao.png)
 
 - **Gráfico de Perfis Médios**: Este gráfico ilustra como diferentes níveis de investimento em `youtube` e `facebook` influenciam as vendas, destacando a natureza da interação entre essas variáveis.
 
-  ![Gráfico de Perfis Médios](./grafico_perfil_medio.png)
+  ![Gráfico de Perfis Médios](./imagens/grafico_perfil_medio.png)
 
 Essas análises proporcionam uma compreensão mais profunda de como as estratégias de marketing digital podem ser otimizadas ao considerar os efeitos combinados das diferentes plataformas.
 
@@ -115,7 +115,7 @@ Essas análises proporcionam uma compreensão mais profunda de como as estratég
 
 
 #### **Curva de Aprendizagem - Técnica Ridge**
-![Curva de Aprendizado do modelo](./Curva_aprendizado.png)
+![Curva de Aprendizado do modelo](./imagens/Curva_aprendizado.png)
 ---
 
 ### 📊 Interpretação dos Coeficientes do Modelo
