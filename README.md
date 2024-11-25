@@ -22,8 +22,12 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
   - Utilizamos scatterplots e mapas de calor para identificar padrões de interação.
   - Criamos termos de interação, como `youtube * facebook`, para incluir combinações potencialmente significativas na modelagem.
 - **Gráficos para visualização**:
-  - Scatter plots entre variáveis explicativas e a variável dependente.
-  - Mapas de calor para exibir correlações e identificar potenciais interações.
+  - Scatter plots e mapas de calor entre variáveis explicativas e a variável dependente:
+#### **Gráfico de Dispersão (com resíduos)**
+ ![Gráfico de Dispersão](./grafico_scat.png)
+
+  #### **Mapas de calor para exibir correlações e identificar potenciais interações.**
+ ![Mapa de Calor](./Mapa_calor.png)
  
 ---
 
@@ -54,6 +58,9 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 - Análise de desempenho do modelo à medida que o volume de dados aumenta.
 - Identificação de possíveis melhorias na qualidade das previsões.
 
+
+#### **Curva de Aprendizagem - Técnica Ridge**
+![Curva de Aprendizado do modelo](./Curva_aprendizado.png)
 ---
 
 ### 📊 Interpretação dos Coeficientes do Modelo
