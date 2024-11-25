@@ -1,6 +1,6 @@
 # 📊 Modelo Simples: Otimização de Variáveis com Base Estatística
 
-Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Ele inclui análise exploratória, limpeza de dados e avaliação de métricas, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
+Este projeto analisa dados de investimentos em marketing e seu impacto nas vendas, utilizando técnicas simples e diretas para criar um modelo preditivo e compreender as relações entre as variáveis. Ele inclui limpeza de dados, avaliação de métricas e análise exploratória, com foco na simplicidade da modelagem para extrair insights significativos. Além disso, técnicas como regularização com **Ridge Regression** e curvas de aprendizagem foram aplicadas, seguindo uma base sólida de conceitos estatísticos e teóricos.
 
 ---
 
@@ -17,14 +17,20 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 ### **1. Análise Exploratória dos Dados**
 - Estatísticas descritivas para entender as distribuições individuais de cada variável, como média, mediana e dispersão.
 - Verificação de correlações lineares entre as variáveis explicativas (`youtube`, `facebook`, `newspaper`) e a variável dependente (`sales`) para identificar relações diretas e independentes.
+#### **Foram criadas funções e uma delas permitem avaliar as medidas resumo juntamente com gráficos para uma melhor assimilação e observação:**
+ ![Medidas Resumo e vizualizaçào gráfica](./Medidas_resumo_grafico.png)
+
+ #### **Gráfico de Dispersão (com resíduos)**
+ ![Gráfico de Dispersão](./Grafico_coordenadas.png)
+
+ 
+  
 - **Análise de interações entre variáveis explicativas**:
   - Exploramos como os efeitos combinados de variáveis, como `youtube` e `facebook`, poderiam ter impacto sinérgico ou antagônico nas vendas.
   - Utilizamos scatterplots e mapas de calor para identificar padrões de interação.
   - Criamos termos de interação, como `youtube * facebook`, para incluir combinações potencialmente significativas na modelagem.
 - **Gráficos para visualização**:
   - Scatter plots e mapas de calor entre variáveis explicativas e a variável dependente:
-#### **Gráfico de Dispersão (com resíduos)**
- ![Gráfico de Dispersão](./grafico_scat.png)
 
   #### **Mapas de calor para exibir correlações e identificar potenciais interações.**
  ![Mapa de Calor](./Mapa_calor.png)
