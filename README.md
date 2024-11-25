@@ -69,7 +69,6 @@ Adicionalmente, a função `selecao_observacao` permite explorar os dados observ
   - Criamos termos de interação, como `youtube * facebook`, para incluir combinações potencialmente significativas na modelagem.
 - **Sumário e gráficos para visualização**:
   - Gráfico de Perfis Médios:
-![Mapa de Calor](./Mapa_calor.png)
 
 ---
 
