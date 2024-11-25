@@ -24,7 +24,7 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 - **Gráficos para visualização**:
   - Scatter plots entre variáveis explicativas e a variável dependente.
   - Mapas de calor para exibir correlações e identificar potenciais interações.
-
+ 
 ---
 
 ### **2. Modelagem**
@@ -56,9 +56,38 @@ Este projeto analisa dados de investimentos em marketing e seu impacto nas venda
 
 ---
 
-### **4. Resultados**
-- Identificação de que a plataforma **YouTube** tem maior impacto nas vendas.
-- Previsão precisa das vendas com base nos investimentos.
+### 📊 Interpretação dos Coeficientes do Modelo
+
+Os coeficientes do modelo representam o impacto proporcional de cada variável no número de vendas, assumindo que todas as outras variáveis permanecem constantes. Os resultados do modelo Ridge indicam:
+
+1. **Facebook**: O impacto direto de investir no Facebook é capturado pela variável `facebook`. Os termos quadráticos e cúbicos (`facebook_quadratico` e `facebook_cubico`) mostram como aumentos mais significativos no investimento podem ter efeitos não lineares.
+
+2. **YouTube**: Investimentos no YouTube têm um impacto significativo nas vendas, como indicado pelos coeficientes das variáveis `youtube` e seus termos não lineares.
+
+3. **Interações**:
+   - O termo de interação `facebook_youtube_interacao` captura o efeito combinado de investir nas duas plataformas simultaneamente. Um coeficiente positivo para essa variável indica que os investimentos conjuntos em Facebook e YouTube têm um efeito sinérgico.
+
+4. **Intercepto**:
+   - O intercepto do modelo representa as vendas previstas quando todos os investimentos são zero.
+
+#### 🔍 Coeficientes do Modelo
+| Variável                     | Coeficiente      |
+|------------------------------|------------------|
+| facebook                     | 0.5174          |
+| facebook_quadratico          | 0.0073          |
+| facebook_cubico              | 0.0026          |
+| youtube                      | 0.5800          |
+| youtube_quadratico           | 0.0255          |
+| youtube_cubico               | 0.2427          |
+| facebook_youtube_interacao   | -0.1334         |
+| **Intercepto**               | 0.2236          |
+
+#### 🔑 Conclusão
+- O **YouTube** apresenta o maior impacto direto entre as variáveis explicativas, seguido pelo **Facebook**.
+- A interação entre **Facebook** e **YouTube** possui um efeito leve negativo, indicando que altos investimentos em ambas as plataformas podem não ser tão eficazes quando feitos simultaneamente.
+- O intercepto sugere que as vendas esperadas, sem nenhum investimento, são aproximadamente 0.2236.
+
+Os coeficientes foram salvos em um arquivo `coeficientes_ridge.csv` para referência futura.
 
 ---
 
