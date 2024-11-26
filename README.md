@@ -200,4 +200,3 @@ Os coeficientes foram salvos em um arquivo `coeficientes_ridge.csv` para referê
    cd modelo-regressao-simples
 
 
-
